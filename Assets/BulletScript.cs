@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public Transform projectileSpawnPoint;
-    public Rigidbody projectilePrefab;
+    public Transform bulletSpawnPoint;
+    public Rigidbody bulletPrefab;
     public float maxStretchDistance = 5f;
     public float shootForce = 10f;
     private bool isPressed = false;
-    private Rigidbody projectile;
+    private Rigidbody bullet;
     private SpringJoint springJoint;
-    private float originalSpringForce;
-    private Renderer projectileRenderer;
+    private float springForce;
+    private Renderer bulletRenderer;
 
     private void Start()
     {
@@ -26,67 +26,77 @@ public class BulletScript : MonoBehaviour
         if (isPressed)
         {
             Vector3 mousePosition = GetMousePosition();
-            Vector3 stretchDirection = mousePosition - projectileSpawnPoint.position;
+            Vector3 stretchDirection = mousePosition - bulletSpawnPoint.position;
             float stretchDistance = Mathf.Clamp(stretchDirection.magnitude, 0f, maxStretchDistance);
-            Vector3 stretchPosition = projectileSpawnPoint.position + stretchDirection.normalized * stretchDistance;
+            Vector3 stretchPosition = bulletSpawnPoint.position + stretchDirection.normalized * stretchDistance;
 
-            projectile.position = stretchPosition;
+            bullet.position = stretchPosition;
 
             if (springJoint)
-                springJoint.spring = originalSpringForce * (1f - stretchDistance / maxStretchDistance);
+                springJoint.spring = springForce * (1f - stretchDistance / maxStretchDistance);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            if (!projectile)
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
             {
-                SpawnProjectile();
-                isPressed = true;
+                if (!bullet)
+                {
+                    SpawnProjectile();
+                    isPressed = true;
+                }
             }
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            if (projectile)
+            else if (touch.phase == TouchPhase.Ended)
             {
-                isPressed = false;
-                LaunchProjectile();
+                if (bullet)
+                {
+                    isPressed = false;
+                    LaunchProjectile();
+                }
             }
         }
     }
 
     private Vector3 GetMousePosition()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+        if (Input.touchCount > 0)
         {
-            return hit.point;
+            Touch touch = Input.GetTouch(0);
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+            {
+                return hit.point;
+            }
         }
         return Vector3.zero;
     }
 
     private void SpawnProjectile()
     {
-        projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
-        springJoint = projectile.GetComponent<SpringJoint>();
-        projectileRenderer = projectile.GetComponent<Renderer>();
-        projectileRenderer.enabled = false;
-        originalSpringForce = springJoint.spring;
+        bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+        springJoint = bullet.GetComponent<SpringJoint>();
+        bulletRenderer = bullet.GetComponent<Renderer>();
+        bulletRenderer.enabled = false;
+        springForce = springJoint.spring;
     }
 
     private void LaunchProjectile()
     {
         if (springJoint)
         {
-            springJoint.spring = originalSpringForce;
+            springJoint.spring = springForce;
             springJoint.connectedBody = null;
             Destroy(springJoint);
         }
 
-        Vector3 launchDirection = projectileSpawnPoint.position - projectile.position;
-        projectile.velocity = launchDirection * shootForce;
+        Vector3 launchDirection = bulletSpawnPoint.position - bullet.position;
+        bullet.velocity = launchDirection * shootForce;
 
-        projectileRenderer.enabled = true;
-        projectile = null;
+        bulletRenderer.enabled = true;
+        bullet = null;
         springJoint = null;
        
     }

@@ -35,8 +35,8 @@ public class BirdSpawner : MonoBehaviour
         if(timeToSpawn <= 0.5f){
             return;
         }
-
-        timeToSpawn -= 0.2f;
+        birdsSaved.setTimeToSpawn(timeToSpawn-0.2f);
+        timeToSpawn = birdsSaved.getTimeToSpawn();
        
         //invoke repeating
         CancelInvoke();

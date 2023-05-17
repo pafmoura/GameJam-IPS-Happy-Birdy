@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896b7d93d1f274d448020b90e952dcba, type: 3}
   m_Name: BirdsSaved
   m_EditorClassIdentifier: 
-  birdsSaved: 1
+  birdsSaved: 2
   lostBirds: 10
-  speed: 18
+  speed: 5
   timeToSpawn: 2

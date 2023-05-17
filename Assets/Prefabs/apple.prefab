@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5725335815064066432}
   - component: {fileID: 5180095467511273178}
   m_Layer: 0
-  m_Name: bread 1
-  m_TagString: Untagged
+  m_Name: apple
+  m_TagString: apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

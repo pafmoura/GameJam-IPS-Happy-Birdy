@@ -35,7 +35,7 @@ public class PauseGame : MonoBehaviour
 
 
     public void mainMenu(){
-        Time.timeScale = 1;
+        
         pauseGameUI.SetActive(false);
         //load the scene 
         SceneManager.LoadScene("Game");

@@ -5,16 +5,23 @@ using UnityEngine;
 public class StartMenu : MonoBehaviour
 {
     
-    [SerializeField] private ManagerSlingShoot managerSlingShoot;
-
+    
     void Awake(){
         managerSlingShoot.disableSlingShoot();
         Time.timeScale = 0;
     }
 
+
+    [SerializeField] private ManagerSlingShoot managerSlingShoot;
+
+    [SerializeField] private GameObject canvasHighScore;
+
+
     [SerializeField] private GameObject gameUI;
 
     [SerializeField] private GameObject buttonPauseGame;
+
+    [SerializeField] private ShowHighScore showHighScore;
 
     
 
@@ -28,5 +35,14 @@ public class StartMenu : MonoBehaviour
         gameObject.SetActive(false);
 
         managerSlingShoot.enableSlingShoot();
+    }
+
+
+    public void viewHighScore(){
+        //set time scale to 0
+        Time.timeScale = 0;
+        canvasHighScore.SetActive(true);
+        showHighScore.showHighScoreinUI();
+        gameObject.SetActive(false);
     }
 }

@@ -12,6 +12,7 @@ public class BirdSpawner : MonoBehaviour
 
     [SerializeField] private BirdsSaved birdsSaved;
 
+    [SerializeField] private float subtractTime=0.2f;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class BirdSpawner : MonoBehaviour
         if(timeToSpawn <= 0.5f){
             return;
         }
-        birdsSaved.setTimeToSpawn(timeToSpawn-0.2f);
+        birdsSaved.setTimeToSpawn(timeToSpawn-subtractTime);
         timeToSpawn = birdsSaved.getTimeToSpawn();
        
         //invoke repeating

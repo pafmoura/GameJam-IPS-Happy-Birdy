@@ -10,6 +10,8 @@ public class MovementBird : MonoBehaviour
     [SerializeField] private BirdsSaved birdsSaved;
 
     [SerializeField] private LoseBird loseBird;
+
+    [SerializeField] private GameObject appleToShow;
    
     
     void Awake(){
@@ -27,6 +29,13 @@ public class MovementBird : MonoBehaviour
         
         if (transform.position.x < -10f) // Se o pássaro sair da tela no lado esquerdo
         {
+
+            //check if the apple is active
+            if (appleToShow.activeSelf)
+            {
+               return;
+            }
+
             //count that the bird is lost
             loseBird.lostBird();
 

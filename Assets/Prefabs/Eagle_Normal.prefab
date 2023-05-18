@@ -1212,6 +1212,7 @@ MonoBehaviour:
   speed: 5
   birdsSaved: {fileID: 11400000, guid: 15b44fe927143bf4f82927bc1469d99c, type: 2}
   loseBird: {fileID: 5026496834730997190}
+  appleToShow: {fileID: 5183806658891944399}
 --- !u!114 &5026496834730997190
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -61,11 +61,12 @@ public class Slingshot : MonoBehaviour
             currentPosition = ClampBoundary(currentPosition);
 
             SetStrips(currentPosition);
-
+/*
             if (birdCollider)
             {
                 birdCollider.enabled = true;
             }
+            */
         }
         else
         {
@@ -80,6 +81,10 @@ public class Slingshot : MonoBehaviour
 
     private void OnMouseUp()
     {
+
+        
+        birdCollider.enabled = true;
+
         isMouseDown = false;
         Shoot();
         currentPosition = idlePosition.position;

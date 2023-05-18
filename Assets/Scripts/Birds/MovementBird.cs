@@ -8,6 +8,8 @@ public class MovementBird : MonoBehaviour
     public float speed = 5f; // Velocidade inicial de movimento dos pássaros
     
     [SerializeField] private BirdsSaved birdsSaved;
+
+    [SerializeField] private LoseBird loseBird;
    
     
     void Awake(){
@@ -25,6 +27,9 @@ public class MovementBird : MonoBehaviour
         
         if (transform.position.x < -10f) // Se o pássaro sair da tela no lado esquerdo
         {
+            //count that the bird is lost
+            loseBird.lostBird();
+
             Destroy(gameObject); // Destruir o objeto do pássaro
         }
     }

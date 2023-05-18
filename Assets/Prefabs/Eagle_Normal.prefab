@@ -1122,6 +1122,7 @@ GameObject:
   - component: {fileID: 4054742571181657324}
   - component: {fileID: 4054742571181657299}
   - component: {fileID: 122491065620827083}
+  - component: {fileID: 5026496834730997190}
   m_Layer: 0
   m_Name: Eagle_Normal
   m_TagString: Untagged
@@ -1224,7 +1225,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   birdsSaved: {fileID: 11400000, guid: 15b44fe927143bf4f82927bc1469d99c, type: 2}
-  amountToIncrease: 2
+  loseBird: {fileID: 5026496834730997190}
+--- !u!114 &5026496834730997190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054360731466611776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20bca45da066084585eb93ad0db6e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdsSaved: {fileID: 11400000, guid: 15b44fe927143bf4f82927bc1469d99c, type: 2}
 --- !u!1 &4055190262279488784
 GameObject:
   m_ObjectHideFlags: 0

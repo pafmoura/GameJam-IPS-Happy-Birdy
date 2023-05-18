@@ -17,6 +17,7 @@ public class BirdsSaved : ScriptableObject
     //event
     public event UnityAction onBirdsSaved;
     public event UnityAction onLostBirds;
+    public event UnityAction onLoseGame;
 
 
     public void resetVariables(){
@@ -34,8 +35,18 @@ public class BirdsSaved : ScriptableObject
     }   
 
     public void haveLostBird(){
-        lostBirds--;    
-        onLostBirds?.Invoke();
+        if(lostBirds>0){
+            lostBirds--;    
+            onLostBirds?.Invoke();
+            
+            if(lostBirds==0)
+            {
+                Debug.Log("lost all birds");
+                onLoseGame?.Invoke();
+            }
+        }else{
+         //   onLoseGame?.Invoke();
+        }
     }
 
     //getters

@@ -39,8 +39,8 @@ public class BirdSpawner : MonoBehaviour
         timeToSpawn = birdsSaved.getTimeToSpawn();
        
         //invoke repeating
-        CancelInvoke();
-        InvokeRepeating("SpawnBird", 0f, timeToSpawn);
+        this.CancelInvoke();
+        this.InvokeRepeating("SpawnBird", 0f, timeToSpawn);
     }
 
 

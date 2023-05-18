@@ -1118,14 +1118,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4056091812463811520}
   - component: {fileID: 4113910428389981106}
-  - component: {fileID: 4166783486180904048}
   - component: {fileID: 4054742571181657324}
   - component: {fileID: 4054742571181657299}
   - component: {fileID: 122491065620827083}
   - component: {fileID: 5026496834730997190}
   m_Layer: 0
   m_Name: Eagle_Normal
-  m_TagString: Untagged
+  m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,19 +1167,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4166783486180904048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4054360731466611776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bdf4a8e54cc06249ae87aacebbe862d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitFX: {fileID: 1486350219787176, guid: 87b722261969f194ea7e30f358a7b1e6, type: 3}
 --- !u!58 &4054742571181657324
 CircleCollider2D:
   m_ObjectHideFlags: 0

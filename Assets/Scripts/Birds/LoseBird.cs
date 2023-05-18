@@ -7,8 +7,8 @@ public class LoseBird : MonoBehaviour
     
     [SerializeField] private BirdsSaved birdsSaved;
 
-    [SerializeField] private LoseGameShow loseGameShow;
-
+    
+    
     public void lostBird(){
         
         birdsSaved.haveLostBird();

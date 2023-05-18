@@ -6,7 +6,7 @@ public class LoseGameShow : MonoBehaviour
 {
 
 
-
+    [SerializeField] private ManagerSlingShoot managerSlingShoot;
     [SerializeField] private BirdsSaved birdsSaved;
     [SerializeField] private GameObject loseGameUI;
 
@@ -32,6 +32,7 @@ public class LoseGameShow : MonoBehaviour
         //set time scale to 0
         Time.timeScale = 0;
         loseGameUI.SetActive(true);
+        managerSlingShoot.disableSlingShoot(true);
     }
 
 

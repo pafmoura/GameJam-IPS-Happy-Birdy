@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BirdsSaved
   m_EditorClassIdentifier: 
   birdsSaved: 0
-  lostBirds: 9
+  lostBirds: 10
   speed: 5
   timeToSpawn: 2

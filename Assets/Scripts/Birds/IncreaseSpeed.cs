@@ -20,6 +20,11 @@ public class IncreaseSpeed : MonoBehaviour
     {
         birdsSaved.onBirdsSaved += increaseSpeed;
     }
+
+    void OnDisable()
+    {
+        birdsSaved.onBirdsSaved -= increaseSpeed;
+    }
     
     private void increaseSpeed(){
         if(birdsSaved.getBirdsSaved() % multiplierToIncrease == 0 && birdsSaved.getBirdsSaved() != 0){

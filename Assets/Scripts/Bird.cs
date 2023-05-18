@@ -27,5 +27,9 @@ public class Bird : MonoBehaviour
     {
         collided = true;
     }
+
+
+
+
     
 }

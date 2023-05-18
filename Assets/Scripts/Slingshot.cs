@@ -36,7 +36,7 @@ public class Slingshot : MonoBehaviour
         CreateBird();
     }
 
-    void CreateBird()
+   public void CreateBird()
     {
         bird = Instantiate(birdPrefab).GetComponent<Rigidbody2D>();
         birdCollider = bird.GetComponent<Collider2D>();

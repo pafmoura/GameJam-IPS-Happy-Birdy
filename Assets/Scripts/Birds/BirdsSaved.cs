@@ -25,6 +25,9 @@ public class BirdsSaved : ScriptableObject
         lostBirds = 10;
         speed = 5;
         timeToSpawn = 2f;
+
+        onBirdsSaved?.Invoke();
+        onLostBirds?.Invoke();
     }
 
     public void addBirdsSaved(int amount)
@@ -41,7 +44,7 @@ public class BirdsSaved : ScriptableObject
             
             if(lostBirds==0)
             {
-                Debug.Log("lost all birds");
+
                 onLoseGame?.Invoke();
             }
         }else{

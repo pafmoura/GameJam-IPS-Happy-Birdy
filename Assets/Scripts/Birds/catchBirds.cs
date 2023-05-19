@@ -7,8 +7,9 @@ public class catchBirds : MonoBehaviour
 
     [SerializeField]private  GameObject appleToShow  ;
     [SerializeField] private BirdsSaved birdsSaved;
+    [SerializeField]
+    private AudioClip _clip;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,9 @@ public class catchBirds : MonoBehaviour
         Debug.Log("collision detected");
         if (other.gameObject.tag == "apple")
         {
+            
             appleToShow.SetActive(true);
+            AudioSource.PlayClipAtPoint(_clip, transform.position);
             disableCollider2D();
             birdsSaved.addBirdsSaved(1);
             Destroy(other.gameObject);

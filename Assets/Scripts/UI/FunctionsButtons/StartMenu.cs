@@ -30,8 +30,9 @@ public class StartMenu : MonoBehaviour
 
         //set time scale to 0
         Time.timeScale = 1;
-        buttonPauseGame.SetActive(true);
         gameUI.SetActive(true);
+        buttonPauseGame.SetActive(true);
+        
         gameObject.SetActive(false);
 
         managerSlingShoot.enableSlingShoot();

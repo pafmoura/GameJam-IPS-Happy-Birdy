@@ -6,6 +6,7 @@ public class BirdSpawner : MonoBehaviour
 {
    
    public GameObject birdPrefab;
+public GameObject bossPrefab;
 
 
     [SerializeField]private float timeToSpawn;
@@ -18,6 +19,7 @@ public class BirdSpawner : MonoBehaviour
     {
     timeToSpawn = birdsSaved.getTimeToSpawn();
     InvokeRepeating("SpawnBird", 0f, timeToSpawn);
+    InvokeRepeating("SpawnBoss", 0f, 20);
     }
 
     void SpawnBird()
@@ -28,6 +30,16 @@ public class BirdSpawner : MonoBehaviour
     Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f);
     GameObject bird = Instantiate(birdPrefab, spawnPosition, birdPrefab.transform.rotation);
     }
+
+    void SpawnBoss()
+    {
+    float spawnX = transform.position.x; // Offset from the current position
+    float spawnY = transform.position.y + Random.Range(-5f, 3f); // Posição Y aleatória
+    
+    Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f);
+    GameObject birdboss = Instantiate(bossPrefab, spawnPosition, bossPrefab.transform.rotation);
+    }
+
 
 
     public void decreaseTimeToSpawn(){

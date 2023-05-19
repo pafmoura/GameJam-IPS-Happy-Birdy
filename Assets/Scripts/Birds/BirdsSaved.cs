@@ -10,9 +10,9 @@ public class BirdsSaved : ScriptableObject
 
     [SerializeField]private int lostBirds=10;
 
-    [SerializeField] private int speed=5;
+    [SerializeField] private int speed=3;
 
-    [SerializeField] private float timeToSpawn=2f;
+    [SerializeField] private float timeToSpawn=3f;
     
     //event
     public event UnityAction onBirdsSaved;
@@ -23,8 +23,8 @@ public class BirdsSaved : ScriptableObject
     public void resetVariables(){
         birdsSaved = 0;
         lostBirds = 10;
-        speed = 5;
-        timeToSpawn = 2f;
+        speed = 3;
+        timeToSpawn = 3f;
 
         onBirdsSaved?.Invoke();
         onLostBirds?.Invoke();

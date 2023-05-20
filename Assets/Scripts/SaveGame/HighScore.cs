@@ -33,4 +33,10 @@ public class HighScore : ScriptableObject
         highScoreList.Sort((x, y) => y.birds.CompareTo(x.birds));
 
     }
+
+
+    public void resetHighScore()
+    {
+        highScoreList.Clear();
+    }
 }

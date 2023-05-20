@@ -36,4 +36,12 @@ public class ManagerSaveGame : MonoBehaviour
 
 
 
+    public void resetHighScore(){
+        //reset the high score
+        highScore.resetHighScore();
+        saveGame.eraseData();
+    }
+
+
+
 }

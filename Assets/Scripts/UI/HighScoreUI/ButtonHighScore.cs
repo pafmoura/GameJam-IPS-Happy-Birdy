@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonHighScore : MonoBehaviour
 {
    
-
+    [SerializeField] private ManagerSaveGame managerSaveGame;
 
 
     public void mainMenu(){
@@ -17,4 +17,11 @@ public class ButtonHighScore : MonoBehaviour
         
     }
     
+
+    public void resetHighScore(){
+            
+        managerSaveGame.resetHighScore();
+        SceneManager.LoadScene("Game");
+    }
+
 }

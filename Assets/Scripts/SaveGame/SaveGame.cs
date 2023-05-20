@@ -99,6 +99,21 @@ public class SaveGame : MonoBehaviour
 
 
 
+
+    public void eraseData(){
+        //show the content of the file
+        
+        
+        if (File.Exists(Application.persistentDataPath + "/SaveData/listData.json"))
+        {
+            
+            File.Delete(Application.persistentDataPath + "/SaveData/listData.json");
+            
+            
+        }
+    }
+
+
     
 
 

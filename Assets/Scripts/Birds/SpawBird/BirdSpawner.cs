@@ -19,8 +19,14 @@ public GameObject bossPrefab;
     {
     timeToSpawn = birdsSaved.getTimeToSpawn();
     InvokeRepeating("SpawnBird", 0f, timeToSpawn);
+    Invoke("inicialBoss", 0);
+    }
+
+
+    void inicialBoss(){
     InvokeRepeating("SpawnBoss", 0f, 20);
     }
+
 
     void SpawnBird()
     {

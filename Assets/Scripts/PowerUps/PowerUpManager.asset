@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 896b7d93d1f274d448020b90e952dcba, type: 3}
-  m_Name: BirdsSaved
+  m_Script: {fileID: 11500000, guid: 7aeb0a065312b124ea6d5aaf41d150c7, type: 3}
+  m_Name: PowerUpManager
   m_EditorClassIdentifier: 
-  birdsSaved: 38
-  lostBirds: 0
-  speed: 19
-  timeToSpawn: 1.3999996
+  slowMotionPowerUp: 7

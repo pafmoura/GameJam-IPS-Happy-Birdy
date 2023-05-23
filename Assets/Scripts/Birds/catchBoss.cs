@@ -11,6 +11,9 @@ public class catchBoss : MonoBehaviour
     [SerializeField]
     private AudioClip _clip;
 
+    [SerializeField] private PowerUpManager powerUpManager;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,9 @@ public class catchBoss : MonoBehaviour
             }
             else
             {
+            //power up added
+            powerUpManager.randomPowerUp();
+
             appleToShow.SetActive(true);
             AudioSource.PlayClipAtPoint(_clip, transform.position);
             disableCollider2D();

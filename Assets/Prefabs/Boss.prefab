@@ -1309,6 +1309,7 @@ MonoBehaviour:
   appleToShow: {fileID: 5183806658891944399}
   birdsSaved: {fileID: 11400000, guid: 15b44fe927143bf4f82927bc1469d99c, type: 2}
   _clip: {fileID: 8300000, guid: b8454903e48694c4a8b44a969f1268eb, type: 3}
+  powerUpManager: {fileID: 11400000, guid: 17b7a29c16b42b248882ada390e8d2fc, type: 2}
 --- !u!114 &3590843847514350389
 MonoBehaviour:
   m_ObjectHideFlags: 0

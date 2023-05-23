@@ -19,12 +19,15 @@ public GameObject bossPrefab;
     {
     timeToSpawn = birdsSaved.getTimeToSpawn();
     InvokeRepeating("SpawnBird", 0f, timeToSpawn);
-    Invoke("inicialBoss", 0);
+    Invoke("inicialBoss", 5);
+    
     }
 
 
     void inicialBoss(){
+        
     InvokeRepeating("SpawnBoss", 0f, 20);
+
     }
 
 
@@ -39,6 +42,8 @@ public GameObject bossPrefab;
 
     void SpawnBoss()
     {
+        Debug.Log("Spawn Boss");
+
     float spawnX = transform.position.x; // Offset from the current position
     float spawnY = transform.position.y + Random.Range(-5f, 3f); // Posição Y aleatória
     
@@ -58,7 +63,7 @@ public GameObject bossPrefab;
         timeToSpawn = birdsSaved.getTimeToSpawn();
        
         //invoke repeating
-        this.CancelInvoke();
+        this.CancelInvoke("SpawnBird");
         this.InvokeRepeating("SpawnBird", 0f, timeToSpawn);
     }
 

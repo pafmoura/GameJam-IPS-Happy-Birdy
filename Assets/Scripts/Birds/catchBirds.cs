@@ -18,11 +18,6 @@ public class catchBirds : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
 
@@ -36,7 +31,14 @@ public class catchBirds : MonoBehaviour
             appleToShow.SetActive(true);
             AudioSource.PlayClipAtPoint(_clip, transform.position);
             disableCollider2D();
-            birdsSaved.addBirdsSaved(1);
+
+            // if the player have double points power up
+            if(birdsSaved.isToDoublePoints()){
+                birdsSaved.addBirdsSaved(2);
+            }else{
+                birdsSaved.addBirdsSaved(1);
+            }
+            
             Destroy(other.gameObject);
 
         }

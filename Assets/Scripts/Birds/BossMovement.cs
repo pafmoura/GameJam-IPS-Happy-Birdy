@@ -32,6 +32,8 @@ public class BossMovement : MonoBehaviour
             //check if the apple is active
             if (appleToShow.activeSelf)
             {
+                    
+                Destroy(gameObject);
                return;
             }
 

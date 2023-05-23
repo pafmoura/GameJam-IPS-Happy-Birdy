@@ -37,7 +37,7 @@ public class SlowMotion : MonoBehaviour
     //when the player click in the imahge
     public void slowMotionActive(){
         //if the player have slow motion power up
-        if(powerUpManager.getSlowMotionPowerUp>0){
+        if(powerUpManager.getSlowMotionPowerUp()>0){
             slowMotionTimer.SetActive(true);
             //disable the button
             slowMotionButton.interactable = false;

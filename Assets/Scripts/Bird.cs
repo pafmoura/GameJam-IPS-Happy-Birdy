@@ -13,6 +13,14 @@ public class Bird : MonoBehaviour
         StartCoroutine(CreatePathPoints());
     }
 
+
+    void Update(){
+         if (transform.position.y < -10f) 
+        {
+            Destroy(gameObject); // Destruir o objeto
+        }
+    }
+
     IEnumerator CreatePathPoints()
     {
         while (true)

@@ -14,6 +14,11 @@ public class BirdsSaved : ScriptableObject
 
     [SerializeField] private float timeToSpawn=3f;
     
+
+    //for the power up double points
+    [SerializeField] private bool doublePoints=false;
+
+
     //event
     public event UnityAction onBirdsSaved;
     public event UnityAction onLostBirds;
@@ -21,6 +26,7 @@ public class BirdsSaved : ScriptableObject
 
 
     public void resetVariables(){
+        doublePoints = false;
         birdsSaved = 0;
         lostBirds = 10;
         speed = 3;
@@ -72,7 +78,12 @@ public class BirdsSaved : ScriptableObject
     public float setTimeToSpawn(float timeToSpawn){
         return this.timeToSpawn = timeToSpawn;
     }
-
+    public bool isToDoublePoints(){
+        return doublePoints;
+    }
+    public void setToDoublePoints(bool doublePoints){
+        this.doublePoints = doublePoints;
+    }
 
 
   }

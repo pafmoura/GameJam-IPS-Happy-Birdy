@@ -7,19 +7,16 @@ public class PowerUpManager : ScriptableObject
 {
 
     [SerializeField] private int slowMotionPowerUp=0;
+    [SerializeField] private int doublePointsPowerUp=0;
 
 
     public event UnityAction onChangeSlowMotionPowerUp;
+    public event UnityAction onChangeDoublePointsPowerUp;
 
 
-
-    public int getSlowMotionPowerUp
+    public int getSlowMotionPowerUp()
     {
-        get
-        {
-            return slowMotionPowerUp;
-        }
-        
+            return slowMotionPowerUp;  
     }
 
     public void decreaseSlowMotionPowerUp(){
@@ -34,10 +31,30 @@ public class PowerUpManager : ScriptableObject
 
 
 
+
+    public int getDoublePointsPowerUp()
+    {
+            return doublePointsPowerUp;  
+    }
+
+    public void decreaseDoublePointsPowerUp(){
+        doublePointsPowerUp--;
+        onChangeDoublePointsPowerUp?.Invoke();
+    }
+
+    public void increaseDoublePointsPowerUp(){
+        doublePointsPowerUp++;
+        onChangeDoublePointsPowerUp?.Invoke();
+    }
+
+
+
     public void randomPowerUp(){
-        int random = 0;//Random.Range(0, 2);
+        int random = Random.Range(0, 2);
         if(random == 0){
             increaseSlowMotionPowerUp();
+        }else if(random == 1){
+            increaseDoublePointsPowerUp();
         }
     }
 

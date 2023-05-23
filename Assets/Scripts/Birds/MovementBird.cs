@@ -33,6 +33,8 @@ public class MovementBird : MonoBehaviour
             //check if the apple is active
             if (appleToShow.activeSelf)
             {
+                
+                Destroy(gameObject);
                return;
             }
 

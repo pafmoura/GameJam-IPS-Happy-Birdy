@@ -16,13 +16,18 @@ public class RestartGame : MonoBehaviour
 
     public void restartGame(){
          Time.timeScale = 1;
+
+        
+        timerSlowMotion.OnEnd();
+        timerDoublePoints.OnEnd();
+        powerUpManager.resetWhenRestartGame();
+
+        
          birdsSaved.resetVariables();
          deleteAllBirds();
 
 
-            timerSlowMotion.OnEnd();
-            timerDoublePoints.OnEnd();
-            powerUpManager.resetWhenRestartGame();
+        
     }
 
 

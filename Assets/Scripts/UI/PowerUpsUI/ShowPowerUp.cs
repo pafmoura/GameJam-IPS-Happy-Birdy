@@ -17,6 +17,8 @@ public class ShowPowerUp : MonoBehaviour
     void Start(){
         showSlowMotionPowerUp();
         showDoublePointsPowerUp();
+
+        powerUpManager.resetVariables();
     }
 
     private void OnEnable()

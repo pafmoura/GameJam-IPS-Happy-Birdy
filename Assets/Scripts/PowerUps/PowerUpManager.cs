@@ -58,5 +58,18 @@ public class PowerUpManager : ScriptableObject
         }
     }
 
+    public void resetVariables(){
+        slowMotionPowerUp = 0;
+        doublePointsPowerUp = 0;
+        onChangeSlowMotionPowerUp?.Invoke();
+        onChangeDoublePointsPowerUp?.Invoke();
+    }
+
+
+
+    public void resetWhenRestartGame(){
+        resetVariables();
+    }
+
     
 }

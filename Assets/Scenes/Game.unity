@@ -7591,6 +7591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdsSaved: {fileID: 11400000, guid: 15b44fe927143bf4f82927bc1469d99c, type: 2}
+  powerUpManager: {fileID: 11400000, guid: 17b7a29c16b42b248882ada390e8d2fc, type: 2}
+  timerSlowMotion: {fileID: 1392003789}
+  timerDoublePoints: {fileID: 1198524916}
 --- !u!1 &2097447331
 GameObject:
   m_ObjectHideFlags: 0

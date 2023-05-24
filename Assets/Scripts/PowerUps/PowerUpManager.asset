@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb0a065312b124ea6d5aaf41d150c7, type: 3}
   m_Name: PowerUpManager
   m_EditorClassIdentifier: 
-  slowMotionPowerUp: 1
+  slowMotionPowerUp: 0
   doublePointsPowerUp: 0

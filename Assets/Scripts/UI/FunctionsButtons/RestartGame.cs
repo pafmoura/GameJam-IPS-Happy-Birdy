@@ -7,12 +7,22 @@ public class RestartGame : MonoBehaviour
    
    [SerializeField] private BirdsSaved birdsSaved;
 
+    [SerializeField] private PowerUpManager powerUpManager;
+
+    
+    [SerializeField] private Timer timerSlowMotion;
+    [SerializeField] private Timer timerDoublePoints;
 
 
     public void restartGame(){
          Time.timeScale = 1;
          birdsSaved.resetVariables();
          deleteAllBirds();
+
+
+            timerSlowMotion.OnEnd();
+            timerDoublePoints.OnEnd();
+            powerUpManager.resetWhenRestartGame();
     }
 
 

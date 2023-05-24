@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
         OnEnd();
     }
 
-    private void OnEnd()
+    public void OnEnd()
     {
         onTimerEnd?.Invoke();
     }
